@@ -12,7 +12,7 @@ pipeline {
         stage("Build image and Deploy container") 
         {
             steps {
-                bat 'docker-compose up'
+                bat 'docker-compose up -d'
             }
 
         }
