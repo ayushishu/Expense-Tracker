@@ -1,11 +1,20 @@
 pipeline {
     agent any
-    stages {
-        stage("test1") {
+    stages 
+    {
+        stage('Delete old version Deployment') 
+        { 
+            steps {
+                bat 'docker-compose down'
+            }
 
         }
-        stage("test2") {
-            
+        stage("Build image and Deploy container") 
+        {
+            steps {
+                bat 'docker-compse up'
+            }
+
         }
     }
 
